@@ -1,0 +1,195 @@
+/*-------------------------------------------- ghislain.bernard@gmail.com --------------------------------------------*/
+
+@import '@fontsource/inter/latin-300.css';
+@import '@fontsource/inter/latin-600.css';
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@import 'material-icons/iconfont/outlined.css';
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* @import 'tailwindcss'; */
+
+@import 'tailwindcss/theme' layer(theme);
+
+@layer theme {
+  :root,
+  :host {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --spacing: 2.5px;
+    --text-xl: 1.4rem;
+    --text-xl--line-height: 1.6rem;
+    --text-2xl: 1.6rem;
+    --text-2xl--line-height: 1.8rem;
+    --text-3xl: 2rem;
+    --text-3xl--line-height: 2.4rem;
+    --text-4xl: 3rem;
+    --text-4xl--line-height: 3.2rem;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 6.4rem;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@layer base {
+  * {
+    @apply box-border font-sans font-light text-[10px] m-0 p-0;
+    text-align: -moz-center;
+  }
+
+  html {
+    @apply select-none;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    @apply cursor-pointer no-underline text-inherit;
+  }
+
+  button {
+    @apply border-0 cursor-pointer text-inherit;
+  }
+
+  div,
+  p {
+    @apply cursor-default;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-[length:inherit];
+    font-weight: inherit;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  img {
+    @apply block;
+  }
+
+  [x-cloak] {
+    @apply hidden!;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@import 'tailwindcss/utilities' layer(utilities);
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@media (width < 320px) or (height < 320px) {
+  body {
+    &:before {
+      @apply flex items-center h-full justify-center text-4xl;
+      @apply content-['😭'] bg-red-400;
+    }
+
+    & > * {
+      @apply hidden!;
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body {
+  @apply flex flex-col h-dvh;
+  @apply bg-slate-100 text-slate-900;
+
+  button {
+    @apply p-3 text-3xl font-semibold rounded;
+  }
+
+  div {
+    @apply flex items-center text-2xl font-semibold;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body > header {
+  @apply flex items-center justify-center h-12;
+  @apply bg-slate-600 text-slate-200;
+
+  div {
+    @apply h-full;
+    @apply text-slate-400;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body > main {
+  @apply flex flex-col items-center justify-center grow;
+
+  div {
+    & > a {
+      @apply flex items-center justify-center gap-2 text-xl font-semibold;
+      @apply hover:bg-amber-400;
+    }
+  }
+
+  & button {
+    @apply hover:bg-amber-400;
+  }
+}
+
+#main-header {
+  & > a {
+    @apply px-2 text-6xl md:text-8xl font-semibold;
+  }
+}
+
+#main-center {
+  @apply h-24 md:h-36;
+
+  & > a {
+    @apply w-12 md:w-18 text-4xl md:text-6xl;
+  }
+}
+
+#main-footer {
+  & > a {
+    @apply mt-2 pr-2;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body > footer {
+  @apply flex items-center justify-center h-12;
+  @apply bg-slate-600 text-slate-200;
+
+  div {
+    @apply h-full;
+
+    & > a {
+      @apply h-full flex items-center gap-2 px-1 text-xl font-semibold;
+      @apply bg-gray-700 text-slate-200 hover:bg-amber-400 hover:text-slate-900;
+
+      & > img {
+        @apply h-full;
+      }
+    }
+  }
+}
+
+#footer-center {
+  & > a > span {
+    @apply -mr-1;
+  }
+}
+
+/*-------------------------------------------- ghislain.bernard@gmail.com --------------------------------------------*/
