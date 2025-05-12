@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+
+steps:
+  - name: test
+    image: node:22.15.0-bookworm-slim
+    commands:
+      - pwd
+      - apt-get update
+      - DEBCONF_NOWARNINGS=yes apt-get --no-install-recommends --option=Dpkg::Use-Pty=0 install make
+      - node --version
+      - corepack install
+      - corepack pnpm --version
+      - '[ "$CI_REPO_REMOTE" ] && chown --recursive node: .'
+      - su node -c 'corepack pnpm install'
+      - su node -c 'NODE_ENV=production PARCEL_WORKER_BACKEND=process corepack pnpm run-script build'
+      - su node -c 'corepack pnpm run-script version'
+      - su node -c 'corepack pnpm run-script lint'
+      - su node -c 'corepack pnpm exec htmlhint dist'
+      - su node -c 'make clean'
+      - su node -c 'rm --force --recursive .pnpm-store'
