@@ -9,8 +9,6 @@
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-/* @import 'tailwindcss'; */
-
 @import 'tailwindcss/theme' layer(theme);
 
 @layer theme {
@@ -55,8 +53,7 @@
     @apply border-0 cursor-pointer text-inherit;
   }
 
-  div,
-  p {
+  div {
     @apply cursor-default;
   }
 
