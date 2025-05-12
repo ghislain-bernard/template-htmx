@@ -1,0 +1,41 @@
+doctype html
+//-------------------------------------------- ghislain.bernard@gmail.com --------------------------------------------//
+
+html
+
+  head
+
+    meta(charset='UTF-8')
+    meta(content='width=device-width,initial-scale=1' name='viewport')
+
+    link(href='./favicon.ico' rel='shortcut icon')
+    link(href='./style.css' rel='stylesheet')
+
+    script(defer src='./script.ts' type='module')
+
+    title template
+
+    body
+      header
+        #header-center
+          span.material-icons-outlined article
+          | TEMPLATE
+      main
+        #main-header
+          a(href='https://htmx.org')
+            img(alt='' src!='img/htmx.webp?as=webp&width=256' style='max-width:64px')
+            | HTMX
+        #main-center
+          include index.html
+        #main-footer
+          a(href='mailto:ghislain.bernard@gmail.com')
+            img(alt='' src!='img/avatar.webp?as=webp&width=128' style='max-width:32px')
+            | ghislain.bernard@gmail.com
+      footer
+        #footer-center
+          a(href='https://opensource.org/license/mit')
+            span.material-icons-outlined bookmark
+            | MIT License
+
+//-------------------------------------------- ghislain.bernard@gmail.com --------------------------------------------//
+
