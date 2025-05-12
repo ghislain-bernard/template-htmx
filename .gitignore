@@ -1,0 +1,7 @@
+/tags
+
+/node_modules/
+
+/.parcel-cache/
+/.pnpm-store/
+/dist/
