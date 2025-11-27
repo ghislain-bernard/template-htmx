@@ -3,7 +3,7 @@ type: docker
 
 steps:
   - name: test
-    image: node:22.20.0-trixie-slim
+    image: node:22.21.1-trixie-slim
     commands:
       - pwd
       - apt-get update
